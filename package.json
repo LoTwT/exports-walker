@@ -1,0 +1,78 @@
+{
+  "name": "exports-walker",
+  "version": "0.0.0",
+  "description": "exports-walker",
+  "type": "module",
+  "packageManager": "pnpm@8.13.1",
+  "author": "LoTwT <l709937065@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/LoTwT/exports-walker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoTwT/exports-walker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LoTwT/exports-walker/issues"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint .",
+    "prepare": "simple-git-hooks",
+    "prepublishOnly": "pnpm build",
+    "prettier": "prettier --write .",
+    "release": "bumpp && pnpm publish",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "up": "taze latest -I",
+    "watch": "tsup --watch"
+  },
+  "devDependencies": {
+    "@ayingott/eslint-config": "^0.7.6",
+    "@ayingott/prettier-config": "^0.1.2",
+    "@types/node": "^20.10.6",
+    "bumpp": "^9.2.1",
+    "eslint": "^8.56.0",
+    "lint-staged": "^15.2.0",
+    "pnpm": "^8.13.1",
+    "prettier": "^3.1.1",
+    "simple-git-hooks": "^2.9.0",
+    "taze": "^0.13.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "unplugin-auto-import": "^0.17.3",
+    "vitest": "^1.1.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "prettier": "@ayingott/prettier-config"
+}
