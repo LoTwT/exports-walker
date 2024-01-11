@@ -73,7 +73,8 @@
     "vitest": "^1.1.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged"
+    "pre-commit": "pnpm exec lint-staged",
+    "pre-push": "pnpm run test run"
   },
   "lint-staged": {
     "*": [
