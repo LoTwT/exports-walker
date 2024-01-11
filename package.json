@@ -49,9 +49,16 @@
     "up": "taze latest -I",
     "watch": "tsup --watch"
   },
+  "dependencies": {
+    "@ast-grep/napi": "^0.16.1",
+    "@ayingott/sucrose": "^0.0.34",
+    "fs-extra": "^11.2.0",
+    "ts-morph": "^21.0.1"
+  },
   "devDependencies": {
     "@ayingott/eslint-config": "^0.7.6",
     "@ayingott/prettier-config": "^0.1.2",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.10.6",
     "bumpp": "^9.2.1",
     "eslint": "^8.56.0",
