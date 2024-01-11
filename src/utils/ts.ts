@@ -15,7 +15,7 @@ export async function getDts(code: string) {
 
   const emitResult = await project.emitToMemory({ emitOnlyDtsFiles: true })
 
-  const fileText = emitResult.getFiles()[0].text
+  const fileText = emitResult.getFiles()[0].text.trim()
 
   return fileText
 }
